@@ -1,0 +1,53 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/ui-shared.scss";
+@import "../../../assets/styles/typography.scss";
+
+.main-container {
+    @extend %disp-flex;
+    flex-direction: column;
+    width: 100%;
+    //justify-content: center;
+    //align-items: center;
+    opacity: 0.8;
+    height: 100vh;
+    background-color: $christmas-gray;
+    padding: 15px;
+}
+
+// .pop-in-0{
+//     -webkit-animation: popinanim 1s forwards; 
+//   }
+
+.search-button {
+    width: 150px;
+    min-height: 35px;
+}
+
+input {
+    font-size: 16px;
+}
+
+@for $i from 0 through 100 {
+    .pop-in-#{$i} {-webkit-animation: fade calc(#{$i} * 0.3s) forwards;}
+}
+
+@-webkit-keyframes popinanim{
+    0% { 
+      opacity:0;
+      -webkit-transform: scale(0.75);
+    }        
+    93% { 
+      opacity:0;
+      -webkit-transform: scale(0.75);
+    }        
+    98% { 
+      opacity:1;
+      -webkit-transform: scale(1.2);
+    }
+    100% { 
+      opacity:1;
+      -webkit-transform: scale(1);
+    }
+  }
+  @keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } }
+  @-webkit-keyframes fade { 0% { opacity: 0; } 100% { opacity: 1; } } 

@@ -1,0 +1,11 @@
+<div class="main-container">
+  <hc-form-field>
+    <hc-label class="text-section-title">Enter your Email Address:</hc-label>
+    <input hcInput [formControl]="emailAddress" required />
+    <hc-error>A valid email address is required</hc-error>
+  </hc-form-field>
+  <button hc-button title="Add" buttonStyle="primary-alt" (click)="searchCards()" class="search-button mb10-spacing"><i class="fas fa-search mr5-spacing"></i>Search</button>
+  <div *ngFor="let card of myCards; let i = index" [ngClass]="getClass(i)">
+    <card [card]="card" [searching]="true"></card>
+  </div>
+</div>

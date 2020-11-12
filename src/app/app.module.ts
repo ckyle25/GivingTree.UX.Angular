@@ -60,7 +60,7 @@ export const rootReducer: ActionReducerMap<IGlobalState> = {
     AddCardModalComponent,
     AlreadyReservedModalComponent,
     ErrorModalComponent,
-    ReleaseCardModalComponent,
+    ReleaseCardModalComponent
   ],
   imports: [
     BrowserModule,
