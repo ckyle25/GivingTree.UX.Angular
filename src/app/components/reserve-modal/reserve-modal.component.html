@@ -1,0 +1,21 @@
+<hc-modal>
+  <hc-modal-header>Reserve Card</hc-modal-header>
+  <hc-modal-body>
+    <div class="form-container">
+      <hc-form-field>
+        <hc-label>Name:</hc-label>
+        <input hcInput [formControl]="name" required />
+        <hc-error>Name cannot be empty</hc-error>
+      </hc-form-field>      
+      <hc-form-field>
+          <hc-label>Email Address:</hc-label>
+          <input hcInput [formControl]="emailAddress" required />
+          <hc-error>A valid email address is required</hc-error>
+      </hc-form-field>
+    </div>
+  </hc-modal-body>
+  <hc-modal-footer>
+      <button hc-button buttonStyle="link" (click)="cancel()">Cancel</button>
+      <button hc-button buttonStyle="primary" (click)="close()" *ngIf="name.valid && emailAddress.valid">Ok</button>
+  </hc-modal-footer>
+</hc-modal>

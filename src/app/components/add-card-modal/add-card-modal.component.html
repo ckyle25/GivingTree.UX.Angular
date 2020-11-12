@@ -1,0 +1,25 @@
+<hc-modal>
+  <hc-modal-header>Reserve Card</hc-modal-header>
+  <hc-modal-body>
+    <div class="form-container">
+      <hc-form-field>
+        <hc-label>Family Number:</hc-label>
+        <input hcInput [formControl]="familyId" required />
+        <hc-error>Must Have a Family Number</hc-error>
+      </hc-form-field>      
+      <hc-form-field>
+          <hc-label>Card Title:</hc-label>
+          <input hcInput [formControl]="cardTitle" required />
+          <hc-error>Card must have a Title</hc-error>
+      </hc-form-field>
+      <hc-form-field>
+        <hc-label>Card Description:</hc-label>
+        <input hcInput [formControl]="cardDsc" />
+      </hc-form-field>
+    </div>
+  </hc-modal-body>
+  <hc-modal-footer>
+      <button hc-button buttonStyle="link" (click)="cancel()">Cancel</button>
+      <button hc-button buttonStyle="primary" (click)="close()" >Ok</button>
+  </hc-modal-footer>
+</hc-modal>

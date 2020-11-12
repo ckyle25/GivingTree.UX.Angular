@@ -1,0 +1,16 @@
+<hc-modal>
+  <hc-modal-header>Card Confirmation</hc-modal-header>
+  <hc-modal-body>
+    <div class="body-container">
+      <img class="gif-sizing" src="../../../assets/gif/christmas_tree.gif">
+      <div class="text-sub-title mt15-spacing">Thank You!</div>
+      <div class="text-paragraph mt10-spacing" *ngIf="innerWidth >= 1000">You will receive a confirmation email from 4th.Ward.GivingTree@gmail.com</div>
+      <div class="text-paragraph" *ngIf="innerWidth >= 1000">Please be sure to give your reserved items to Viviann Carlsen by (insert date here)</div>
+      <div class="text-mobile mt10-spacing" *ngIf="innerWidth < 1000">You will receive a confirmation email from 4th.Ward.GivingTree@gmail.com</div>
+      <div class="text-mobile" *ngIf="innerWidth < 1000">Please be sure to give your reserved items to Viviann Carlsen by (insert date here)</div>
+    </div>
+  </hc-modal-body>
+  <hc-modal-footer>
+      <button hc-button buttonStyle="primary" (click)="close()">Ok</button>
+  </hc-modal-footer>
+</hc-modal>

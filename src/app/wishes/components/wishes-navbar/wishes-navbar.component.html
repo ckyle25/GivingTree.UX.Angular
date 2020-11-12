@@ -1,0 +1,50 @@
+<hc-navbar appIcon="../../../../assets/MosaicLogo.svg" brandIcon="../../../../assets/TriFlame.svg" [homeUri]="undefined" [fixedTop]="false">
+  <hc-navbar-link uri="myhome" linkText="Home"></hc-navbar-link>
+  <hc-navbar-link uri="portal" linkText="Portal"></hc-navbar-link>
+  <hc-icon class="hc-navbar-icon" fontSet="fa" fontIcon="fa-question-circle-o" [hcPop]="options"></hc-icon>
+  <span class="hc-navbar-vertical-separator"></span>
+  <div class="hc-navbar-username" [hcPop]="user">
+      <span class="hc-text-ellipsis">Mini, Strator</span>
+      <hc-icon fontSet="fa" fontIcon="fa-angle-down"></hc-icon>
+  </div>
+  <hc-navbar-mobile-menu appSwitcher="false">
+    <hc-list>
+        <hc-list-item routerLink="myhome" routerLinkActive="active-link">
+            <span hcListLine>Home</span>
+        </hc-list-item>
+    </hc-list>
+    <hc-list>
+        <hc-list-item routerLink="portal" routerLinkActive="active-link">
+            <span hcListLine>Portal</span>
+        </hc-list-item>
+    </hc-list>
+  </hc-navbar-mobile-menu>
+</hc-navbar>
+
+<hc-pop #options>
+  <ul class="list-options">
+      <li>
+          <a href="" target="_blank">Help Topics</a>
+      </li>
+      <li>
+          <a href="" target="_blank">Release Notes</a>
+      </li>
+      <li>
+          <a href="" target="_blank">About</a>
+      </li>
+      <li>
+          <a href="https://community.healthcatalyst.com/" target="_blank">Health Catalyst Community</a>
+      </li>
+      <li>
+          <a href="" target="_blank">Send us your feedback</a>
+      </li>
+  </ul>
+</hc-pop>
+
+<hc-pop #user>
+  <ul class="list-options">
+      <li>
+          <a href="" target="_blank">Logout</a>
+      </li>
+  </ul>
+</hc-pop>

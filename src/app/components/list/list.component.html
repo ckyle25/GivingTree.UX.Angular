@@ -1,0 +1,5 @@
+<div class="main-container">
+  <div *ngFor="let card of cards; let i = index" [ngClass]="getClass(i)">
+    <card [card]="card"></card>
+  </div>
+</div>

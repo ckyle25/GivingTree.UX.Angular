@@ -1,0 +1,16 @@
+<div class="main-container">
+    <div class="left-container">
+        <div class="top-content">
+            <div class="title-style text-sub-title logo-style" *ngIf="innerWidth >= 1000">{{card.cardtitletxt}}</div>
+            <div class="title-style text-paragraph-header logo-style" *ngIf="innerWidth < 1000">{{card.cardtitletxt}}</div>
+        </div>
+        <div class="middle-content">
+            <div class="text-style text-paragraph logo-style" *ngIf="innerWidth >= 1000">{{card.carddsc}}</div>
+            <div class="text-style mobile-description logo-style" *ngIf="innerWidth < 1000">{{card.carddsc}}</div>
+        </div>
+    </div>
+    <div class="right-container">
+        <button hc-button title="Reserve" buttonStyle="primary" (click)="reserveCard()" class="edit-button" *ngIf="card.reservedflg !== 1"><i class="fas fa-edit mr5-spacing"></i>Reserve</button>
+        <button hc-button title="Taken" buttonStyle="minimal" class="edit-button" *ngIf="card.reservedflg == 1" disabled>Reserved</button>
+    </div>
+</div>

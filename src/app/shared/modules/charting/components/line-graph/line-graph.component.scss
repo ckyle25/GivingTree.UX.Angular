@@ -1,0 +1,16 @@
+.graph-size {
+  width: 100%;
+  height: 350px;
+  background-color: white;
+  border-radius: 5px;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+  margin-bottom: 15px;
+}
+
+.graph-container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display:flex;
+  justify-content: center;
+  align-items: center;
+}

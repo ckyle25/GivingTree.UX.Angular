@@ -1,0 +1,59 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/ui-shared.scss";
+@import "../../../assets/styles/typography.scss";
+
+.main-container {
+    @extend %disp-flex;
+    flex-direction: row;
+    width: 100%;
+    background-color: $christmas-silver;
+    // box-shadow: 0 3px 6px rgba(0,0,0,0.16), 0 3px 6px rgba(0,0,0,0.23);
+    border: 1px solid $offblack;
+    border-radius: 5px;
+    padding: 5px;
+    margin-bottom: 10px;
+}
+
+.left-container {
+    @extend %disp-flex;
+    flex-direction: column;
+    width: 50%;
+}
+
+.right-container {
+    @extend %disp-flex;
+    flex-direction: column;
+    width: 50%;
+    //height: 100%;
+    //justify-content: center;
+    align-items: flex-end;
+    justify-content: center;
+    margin-right: 20px;
+}
+
+.top-content {
+    @extend %disp-flex;
+    flex-direction: row;
+    width: 100%;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .title-style {
+    color: $offblack;
+  }
+
+  .middle-content {
+    @extend %disp-flex;
+    flex-direction: row;
+    margin: 5px 0px 5px 0px;
+  }
+
+  .text-style {
+    color: $offblack;
+    font-weight: 550;
+  }
+
+  .mobile-description {
+    font-size: 12px;
+  }

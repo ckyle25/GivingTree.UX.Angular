@@ -1,0 +1,122 @@
+@import "../../../../assets/styles/components/buttons.scss";
+@import "../../../../assets/styles/colors.scss";
+@import "../../../../assets/styles/ui-shared.scss";
+
+.dual-list-form-container{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex;
+    justify-content: space-between;
+
+}
+
+.labels {
+    font-weight: bold;
+    font-size: 15px;
+}
+
+
+%buttons-container-base{
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items:center;
+}
+
+.buttons-container {
+  @extend %buttons-container-base;
+}
+
+.buttons-container-search {
+  @extend %buttons-container-base;
+  margin-top: 45px;
+}
+
+.selectedoption{
+    background-color: #C7EDFD;
+}
+
+.list-box{
+    width: 335px;
+    height: 280px;
+    overflow: auto;
+    border: 1px solid $light-gray-back-ground;
+    .alternate-color:nth-child(even) {background-color: #F2F3F3}
+    .alternate-color:nth-child(odd) {background-color: $white}
+    div {
+        padding: 5px 0 5px 10px;
+        border: 1px solid rgba(232,232,232,.5);
+        min-height: 35px;
+    }
+}
+
+.top-options {
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+.active-move {
+    color: 7632E3;
+}
+
+.glyphicon {
+  font-size: 20px;
+}
+
+.arrow-button {
+    width: 35px;
+    height: 65px;
+    margin: 10px;
+    padding-left: 7px;
+    margin-right: 20px;
+    border: none;
+    &:disabled{
+        background-color: #E4E6E4;
+        color: $hc-label-text;
+    }
+
+    &:enabled {
+        background-color: $secondary-purple;
+        color: $white;
+    }
+}
+
+.font-thirteen {
+    font-size: 13px;
+}
+
+.all-btn {
+    text-align: right;
+    color: $primary-blue;
+    outline:0 !important;
+
+
+    &:disabled {
+        color: $hc-gray
+    }
+}
+
+.content-count {
+    font-style: italic;
+}
+
+.available-search-bar {
+  width: 100%;
+  height: 34px;
+  margin: 5px 0;
+  border: 1px solid $light-gray-back-ground;
+  padding-left: 10px;
+
+  ::placeholder {
+    color: $hc-label-text;
+  }
+}
+
+.margin-t45 {
+  margin-top: 45px;
+}

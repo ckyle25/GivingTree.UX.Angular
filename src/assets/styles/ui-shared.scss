@@ -1,0 +1,87 @@
+@import "./colors";
+
+%disp-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.disp-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.clickable{
+  cursor: pointer;
+}
+
+.clickable-text {
+  font-size: 14px;
+  font-weight: 600;
+  color: $primary-blue;
+  text-decoration: none;
+  margin-bottom: 5px;
+  cursor: pointer;
+}
+
+.mt15-spacing {
+  margin-top: 15px;
+}
+
+.mt5-spacing {
+  margin-top: 5px;
+}
+
+.mt10-spacing {
+  margin-top: 10px;
+}
+
+.mt25-spacing {
+  margin-top: 25px;
+}
+
+.ml10-spacing {
+  margin-left: 10px;
+}
+
+.ml5-spacing {
+  margin-left: 5px;
+}
+
+.mr5-spacing {
+  margin-right: 5px;
+}
+
+.mb10-spacing {
+  margin-bottom: 10px;
+}
+
+.mr10-spacing {
+  margin-right: 10px;
+}
+
+.small-icon {
+  width: 15px;
+  height: 15px;
+}
+
+.medium-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.large-icon {
+  width: 30px;
+  height: 30px;
+}
+
+.w-100 {
+  width: 100%;
+}
+
+.white-text {
+  color: $white;
+}

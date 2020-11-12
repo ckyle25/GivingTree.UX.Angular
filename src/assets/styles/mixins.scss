@@ -1,0 +1,12 @@
+@mixin colorButton($color){
+  background-color: $color;
+  border-color: darken($color, 1%);
+  transition: background-color 0.3s, border-color 0.3s;
+
+  &:hover, &:focus {
+      background-color: darken($color, 4%);
+  }
+  &:active {
+      background-color: darken($color, 8%);
+  }
+}

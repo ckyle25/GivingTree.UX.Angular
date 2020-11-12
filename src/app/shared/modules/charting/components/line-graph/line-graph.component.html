@@ -1,0 +1,11 @@
+<div [attr.id]="chartId" class="graph-size" *ngIf="chartId">
+    <hc-progress-spinner
+      [diameter]="spinnerDiameter"
+      [color]="spinnerColor"
+      [hasChannel]="spinnerHasChannel"
+      [isCentered]="spinnerCentered"
+      [isDeterminate]="spinnerIsDeterminate"
+      [progress]="spinnerProgress"
+      *ngIf="!data">
+    </hc-progress-spinner>
+</div>

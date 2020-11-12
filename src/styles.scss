@@ -1,0 +1,84 @@
+/* You can add global styles to this file, and also import other style files */
+@import "./reset.scss";
+@import "../node_modules/@healthcatalyst/cashmere/scss/cashmere";
+@import "./assets/styles/colors.scss";
+
+html body {
+  height: 100% !important
+}
+
+hc-drawer-container {
+  div.hc-drawer-content {
+      padding: 0px 0px 0px 0px !important;
+    }
+}
+
+.hc-navbar {
+  background-color: $christmas-green !important;
+  opacity: 0.9 !important;
+
+  .navbar-brand {
+    background-color: $christmas-red !important;
+    padding: 7px !important;
+  }
+
+  .navbar-link:hover {
+    background-color: #41603b !important;
+  }
+
+  .navbar-link:active {
+    border-bottom: 5px solid $christmas-red !important;
+  }
+
+  .hc-navbar-mobile-menu {
+    background-color: #41603b !important;
+  }
+
+  .navbar-brand {
+    a {
+      img {
+        height: 100% !important;
+      }
+    }
+  }
+
+  .navbar-app {
+    padding: 0px !important;
+
+    a {
+      img {
+        height: 100% !important;
+      }
+    }
+  }
+}
+
+.hc-navbar .navbar-link.active:not(.inactive), .hc-navbar .navbar-link:active {
+  border-bottom: 5px solid $christmas-gold !important;
+}
+
+.menu-dropdown {
+  background-color: $christmas-green !important;
+}
+
+hc-list .hc-list-item:hover {
+  background-color: #41603b !important;
+}
+
+.hc-button.hc-primary {
+  background-color: $christmas-gold !important;
+}
+
+.hc-button.hc-primary:hover {
+  background-color: #e78909 !important;
+}
+
+.hc-button.hc-primary:active {
+  background-color: #e4a248 !important;
+}
+
+.overlay-pointer-events {
+  pointer-events: all !important;
+}
+
+[hidden] {display: none !important}

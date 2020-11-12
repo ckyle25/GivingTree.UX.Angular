@@ -1,0 +1,81 @@
+@import "../colors.scss";
+
+th.sortable{
+    cursor: pointer;
+    color: $hc-dark-blue;
+    font-size: 13px;
+    font-weight: 600;
+}
+
+th.non-sortable{
+    font-size: 13px;
+    font-weight: 600;
+}
+
+.tableStyle{
+    border-bottom: 1px solid $subheader-gray;
+
+    tbody {
+      border-right:1px solid $subheader-gray;
+      border-left:1px solid $subheader-gray;
+      font-size: 12px;
+    }
+
+    thead {
+      background-color: $body-gray;
+    }
+
+    th {
+      padding: 5px;
+    }
+
+    td {
+      padding: 5px;
+      word-wrap: break-word;
+      border-bottom: 1px solid $subheader-gray;
+    }
+}
+
+.sortingColumnDesc{
+  color: $primary-green !important;
+}
+
+$sorterPadding:3px;
+
+.sortingColumnDesc::before{
+   padding-top: $sorterPadding;
+   font-family: FontAwesome;
+   content: "\f160";
+   color: $primary-green;
+   font-size: 11px;
+   float: right;
+   letter-spacing: -1px;
+}
+
+.sortingColumnAsc{
+  color:$primary-green !important;
+}
+
+.sortingColumnAsc::before{
+   padding-top: $sorterPadding;
+   font-family: FontAwesome;
+   content: "\f161";
+   color: $primary-green;
+   font-size: 11px;
+   float: right;
+   letter-spacing: -1px;
+}
+
+.fa-sortable:before {
+   padding-top: $sorterPadding;
+   font-family: FontAwesome;
+   content: "\f175 \f176";
+   color: $subheader-gray;
+   font-size: 11px;
+   float: right;
+   letter-spacing: -1px;
+}
+
+.fw-600 {
+  font-weight: 600;
+}

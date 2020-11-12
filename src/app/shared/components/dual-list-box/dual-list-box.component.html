@@ -1,0 +1,57 @@
+<div class="dual-list-form-container">
+  <div class="selections-container">
+      <span class="labels">{{availableLabel}}</span>
+      <input type="text" class="available-search-bar" #availableSearch placeholder="Search..." (keyup)="filterList(availableSearch.value)" *ngIf="searchable">
+      <div class="top-options row">
+          <div *ngIf="showCounts" class="content-count font-thirteen col-sm-6">
+              Showing {{availableOptions.length}} of {{initialAvailableItemCount}}
+          </div>
+          <div class="col-sm-2">
+              <button hc-button title="Select All" buttonStyle="secondary" class="ml5-spacing" (click)="selectAllAvailable()" size="sm">Select All</button>
+          </div>
+          <div class="col-sm-2">
+              <button hc-button title="Select None" buttonStyle="secondary" class="ml5-spacing" (click)="selectNoneAvailable()" [disabled]="availableOptionsStagingArray.length == 0 " size="sm">Select None</button>
+          </div>
+      </div>
+
+      <div id="filter-dual-list-available-group" class="list-box mt10-spacing" multiple>
+          <div *ngFor="let item of availableOptions" (click)="onAvailableItemClick(item)" [ngClass]="{'alternate-color': !item.selected}"
+              [class.selectedoption]="item.selected">
+              <span class="ui_filter-dual-list-available-item">{{item?.label}}</span>
+          </div>
+      </div>
+  </div>
+
+  <div [ngClass]="{'buttons-container-search': searchable, 'buttons-container': !searchable}">
+      <button type="button" id="filter-dual-list-add" class="btn btn-default arrow-button" [disabled]="availableOptionsStagingArray.length == 0" (click)="moveSelectedOptionsToSelected()">
+          <i class="fas fa-arrow-right glyphicon"></i>
+      </button>
+      <button type="button" id="filter-dual-list-remove" class="btn btn-default arrow-button" [disabled]="selectedOptionsStagingArray.length == 0" (click)="moveMarkedSelectedItemsToAvailable()">
+          <i class="fas fa-arrow-left glyphicon"></i>
+      </button>
+  </div>
+
+  <div [ngClass]="{'margin-t45': searchable, 'selections-container': !searchable}">
+      <span class="labels">{{selectedLabel}}</span>
+      <div class="top-options row mt10-spacing">
+          <div *ngIf="showCounts" class="content-count font-thirteen col-sm-6">
+              {{selectedOptions.length}} Selected
+          </div>
+          <div class="col-sm-2">
+              <button hc-button title="Select All" buttonStyle="secondary" class="ml5-spacing" (click)="selectAllSelected()" [disabled]="selectedOptions.length == 0" size="sm">Select All</button>
+          </div>
+          <div class="col-sm-2">
+              <button hc-button title="Select None" buttonStyle="secondary" class="ml5-spacing" (click)="selectNoneSelected()" [disabled]="selectedOptionsStagingArray.length == 0" size="sm">Select None</button>
+          </div>
+      </div>
+
+      <div id="filter-dual-list-selected-group" class="list-box mt10-spacing" multiple>
+          <div *ngFor="let item of selectedOptions" (click)="onSelectedItemClick(item)" [ngClass]="{'alternate-color': !item.selected}"
+              [class.selectedoption]="item.selected">
+              <span class="ui_filter-dual-list-selected-item">{{item?.label}}</span>
+          </div>
+      </div>
+
+  </div>
+
+</div>

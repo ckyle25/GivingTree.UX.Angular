@@ -1,0 +1,18 @@
+
+<!-- <boot-screen *ngIf="firstDisplay"></boot-screen>
+<div class="login-background" *ngIf="!firstDisplay">
+  <div class="highest label-text">CORNWALLIA</div>
+  <div class="highest logo">C</div>
+  <div class=" higher black-film film-fade-in"></div>
+  <div class="login-inner-background fade-in"></div>
+  <button class="highest fade-in login-button" hc-button title="Login" buttonStyle="secondary" (click)="auth.login('/main')" *ngIf="!firstDisplay">Login</button>
+</div> -->
+
+
+<initial-load [show]="firstDisplay"></initial-load>
+<div class="fade-in" *ngIf="!firstDisplay">
+  <root-navbar ></root-navbar>
+  <router-outlet></router-outlet>
+</div>
+
+

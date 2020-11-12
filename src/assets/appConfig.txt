@@ -1,0 +1,4 @@
+{
+  "enableWishes": true,
+  "enableBored": true
+}

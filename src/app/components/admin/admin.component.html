@@ -1,0 +1,50 @@
+<div class="main-container">
+  <button hc-button title="Add" buttonStyle="primary-alt" (click)="addCard()" class="add-button mb10-spacing"><i class="fas fa-plus mr5-spacing"></i>Add Card</button>
+  <table hc-table [dataSource]="dataSource" tight="true" hcSort>
+    <ng-container hcColumnDef="cardid">
+        <th hc-header-cell *hcHeaderCellDef hc-sort-header>Card No.</th>
+        <td hc-cell *hcCellDef="let element">{{ element.cardid }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="familyid">
+        <th hc-header-cell *hcHeaderCellDef hc-sort-header>Family No.</th>
+        <td hc-cell *hcCellDef="let element">{{ element.familyid }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="cardtitletxt">
+        <th hc-header-cell *hcHeaderCellDef hc-sort-header>Card Title</th>
+        <td hc-cell *hcCellDef="let element">{{ element.cardtitletxt }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="carddsc">
+        <th hc-header-cell *hcHeaderCellDef hc-sort-header>Card Description</th>
+        <td hc-cell *hcCellDef="let element">{{ element.carddsc }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="reservedflg">
+      <th hc-header-cell *hcHeaderCellDef hc-sort-header>Reserved?</th>
+      <td hc-cell *hcCellDef="let element">{{ element.reservedflg }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="reservednm">
+      <th hc-header-cell *hcHeaderCellDef hc-sort-header>Reserver</th>
+      <td hc-cell *hcCellDef="let element">{{ element.reservednm }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="reservedemailtxt">
+      <th hc-header-cell *hcHeaderCellDef hc-sort-header>Reserver Email</th>
+      <td hc-cell *hcCellDef="let element">{{ element.reservedemailtxt }}</td>
+    </ng-container>
+
+    <ng-container hcColumnDef="delete">
+      <th hc-header-cell *hcHeaderCellDef>Delete</th>
+      <td hc-cell *hcCellDef="let element" class="clickable">
+        <button hc-button title="Reserve" buttonStyle="destructive" (click)="deleteCard(element.cardid)" class="delete-button"><i class="fas fa-times mr5-spacing"></i>Delete</button>
+      </td>
+    </ng-container>
+
+    <tr hc-header-row *hcHeaderRowDef="displayedColumns"></tr>
+    <tr hc-row *hcRowDef="let row; columns: displayedColumns"></tr>
+  </table>
+ 
+</div>
