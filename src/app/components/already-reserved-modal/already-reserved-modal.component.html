@@ -1,3 +1,16 @@
-<p>
-  already-reserved-modal works!
-</p>
+<hc-modal>
+  <hc-modal-header>Reservation Failed</hc-modal-header>
+  <hc-modal-body>
+    <div class="body-container">
+      <img class="gif-sizing" src="../../../assets/images/alert.png">
+      <div class="text-sub-title mt15-spacing">Card not reserved.</div>
+      <div class="text-paragraph mt10-spacing" *ngIf="innerWidth >= 1000">This card may have been reserved by someone else.</div>
+      <div class="text-paragraph" *ngIf="innerWidth >= 1000">Please try to reserve again or select something else.</div>
+      <div class="text-mobile mt10-spacing" *ngIf="innerWidth < 1000">This card may have been reserved by someone else.</div>
+      <div class="text-mobile" *ngIf="innerWidth < 1000">Please try to reserve again or select something else.</div>
+    </div>
+  </hc-modal-body>
+  <hc-modal-footer>
+      <button hc-button buttonStyle="primary" (click)="close()">Ok</button>
+  </hc-modal-footer>
+</hc-modal>

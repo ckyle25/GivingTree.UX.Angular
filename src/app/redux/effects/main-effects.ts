@@ -9,6 +9,7 @@ import { HcModal, ModalOptions, ModalService } from '@healthcatalyst/cashmere';
 import { ConfirmationModalComponent } from 'src/app/components/confirmation-modal/confirmation-modal.component';
 import { Store } from '@ngrx/store';
 import { IGlobalState } from 'src/app/models/global-state';
+import { AlreadyReservedModalComponent } from 'src/app/components/already-reserved-modal/already-reserved-modal.component';
 
 @Injectable()
 export class MainEffects {
@@ -43,7 +44,10 @@ export class MainEffects {
           this.openConfirmation(1)
           return ({type: mainActions.RESERVE_CARD_SUCCESS, payload: res.responseText})
         })
-        .catch(reason => ({type: mainActions.RESERVE_CARD_ERROR}))
+        .catch(reason => {
+          this.openConfirmationError(1)
+          return ({type: mainActions.RESERVE_CARD_ERROR})
+        })
     })));
 
   releaseCard$ = createEffect(() => this.actions$.pipe(
@@ -95,6 +99,16 @@ export class MainEffects {
       size: 'lg'
     };
     let subSubModal: HcModal<ConfirmationModalComponent> = this.modalService.open(ConfirmationModalComponent, subOptions);
+  }
+
+  openConfirmationError(data: any) {
+    let subOptions: ModalOptions = {
+      data: data,
+      ignoreEscapeKey: true,
+      ignoreOverlayClick: true,
+      size: 'lg'
+    };
+    let subSubModal: HcModal<AlreadyReservedModalComponent> = this.modalService.open(AlreadyReservedModalComponent, subOptions);
   }
   // getUser$ = createEffect(() => this.actions$.pipe(
   //   ofType(mainActions.GET_USER),

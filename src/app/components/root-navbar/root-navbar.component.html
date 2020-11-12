@@ -1,6 +1,7 @@
 <hc-navbar appIcon="../../../assets/svg/Giving Tree.svg" brandIcon="../../../assets/icons/android-chrome-192x192.png" [homeUri]="['/list']" [fixedTop]="false">
   <hc-navbar-link uri="list" linkText="Needed"></hc-navbar-link>
   <hc-navbar-link uri="reserved" linkText="Reserved"></hc-navbar-link>
+  <hc-navbar-link uri="release" linkText="Release"></hc-navbar-link>
   <!-- <hc-navbar-link uri="apps" linkText="Apps"></hc-navbar-link> -->
   <!-- <hc-icon class="hc-navbar-icon" fontSet="fa" fontIcon="fa-question-circle-o" [hcPop]="options"></hc-icon> -->
   <!-- <hc-icon class="hc-navbar-icon" fontSet="fas" fontIcon="fa-sign-out-alt" (click)="auth.logout()"></hc-icon> -->
@@ -16,6 +17,9 @@
         </hc-list-item>
         <hc-list-item routerLink="reserved" routerLinkActive="active-link">
           <span hcListLine>Reserved</span>
+        </hc-list-item>
+        <hc-list-item routerLink="release" routerLinkActive="active-link">
+          <span hcListLine>Release</span>
         </hc-list-item>
         <!-- <hc-list-item routerLink="apps" routerLinkActive="active-link">
           <span hcListLine>Apps</span>

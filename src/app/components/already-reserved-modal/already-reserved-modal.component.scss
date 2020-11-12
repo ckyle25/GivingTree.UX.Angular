@@ -1,0 +1,27 @@
+@import "../../../assets/styles/colors.scss";
+@import "../../../assets/styles/ui-shared.scss";
+@import "../../../assets/styles/typography.scss";
+
+.body-container {
+    @extend %disp-flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+}
+
+.gif-sizing {
+    height: 200px;
+}
+
+.text-wrapping {
+    @extend %disp-flex;
+    flex-wrap: nowrap;
+}
+
+.text-mobile {
+    font-size: 13px;
+    font-weight: 300;
+    line-height: 1.5;
+  }

@@ -4,6 +4,7 @@ import { MainLandingComponent } from './components/main-landing/main-landing.com
 import { ListComponent } from './components/list/list.component';
 import { ReservedListComponent } from './components/reserved-list/reserved-list.component';
 import { AdminComponent } from './components/admin/admin.component';
+import { ReleaseCardModalComponent } from './components/release-card-modal/release-card-modal.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'landing', pathMatch: 'full'},
@@ -11,6 +12,7 @@ const routes: Routes = [
     { path: '', redirectTo: 'list', pathMatch: 'full'},
     { path: 'list', component: ListComponent },
     { path: 'reserved', component: ReservedListComponent },
+    { path: 'release', component: ReleaseCardModalComponent },
     { path: 'admin', component: AdminComponent }
   ]},
 ];

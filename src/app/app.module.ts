@@ -37,6 +37,7 @@ import { ConfirmDeleteModalComponent } from './components/confirm-delete-modal/c
 import { AddCardModalComponent } from './components/add-card-modal/add-card-modal.component';
 import { AlreadyReservedModalComponent } from './components/already-reserved-modal/already-reserved-modal.component';
 import { ErrorModalComponent } from './components/error-modal/error-modal.component';
+import { ReleaseCardModalComponent } from './components/release-card-modal/release-card-modal.component';
 
 export const rootReducer: ActionReducerMap<IGlobalState> = {
     main: mainReducer
@@ -59,6 +60,7 @@ export const rootReducer: ActionReducerMap<IGlobalState> = {
     AddCardModalComponent,
     AlreadyReservedModalComponent,
     ErrorModalComponent,
+    ReleaseCardModalComponent,
   ],
   imports: [
     BrowserModule,

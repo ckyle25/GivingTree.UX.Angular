@@ -11,6 +11,7 @@
     </div>
     <div class="right-container">
         <button hc-button title="Reserve" buttonStyle="primary" (click)="reserveCard()" class="edit-button" *ngIf="card.reservedflg !== 1"><i class="fas fa-edit mr5-spacing"></i>Reserve</button>
-        <button hc-button title="Taken" buttonStyle="minimal" class="edit-button" *ngIf="card.reservedflg == 1" disabled>Reserved</button>
+        <button hc-button title="Reserved" buttonStyle="minimal" class="edit-button" *ngIf="card.reservedflg == 1 && !searching" disabled>Reserved</button>
+        <button hc-button title="Release" buttonStyle="destructive" (click)="releaseCard()" class="edit-button" *ngIf="card.reservedflg == 1 && searching">Release</button>
     </div>
 </div>
