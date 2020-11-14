@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { IGlobalState } from 'src/app/models/global-state';
 import { HcModal, ModalOptions, ModalService } from '@healthcatalyst/cashmere';
 import { AdminPasswordModalComponent } from '../admin-password-modal/admin-password-modal.component';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'root-navbar',
@@ -17,6 +18,7 @@ export class RootNavbarComponent implements OnInit {
   public result: string;
 
   constructor(public store: Store<IGlobalState>,
+              public router: Router,
               private modalService: ModalService) { }
 
   ngOnInit() {
@@ -24,15 +26,16 @@ export class RootNavbarComponent implements OnInit {
   }
 
   adminLogin() {
-    let options: ModalOptions = {
-      data: 'I got this data from the class that opened me',
-      ignoreEscapeKey: true,
-      ignoreOverlayClick: true,
-      size: 'lg'
-    };
-    let subModal: HcModal<AdminPasswordModalComponent> = this.modalService.open(AdminPasswordModalComponent, options);
-    subModal.result.subscribe(res => {
-      this.result = res
-    });
+    this.router.navigate(['/landing/admin'])
+    // let options: ModalOptions = {
+    //   data: 'I got this data from the class that opened me',
+    //   ignoreEscapeKey: true,
+    //   ignoreOverlayClick: true,
+    //   size: 'lg'
+    // };
+    // let subModal: HcModal<AdminPasswordModalComponent> = this.modalService.open(AdminPasswordModalComponent, options);
+    // subModal.result.subscribe(res => {
+    //   this.result = res
+    // });
   }
 }

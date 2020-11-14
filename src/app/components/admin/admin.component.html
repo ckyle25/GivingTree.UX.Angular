@@ -1,4 +1,4 @@
-<div class="main-container">
+<div class="main-container" *ngIf="display">
   <button hc-button title="Add" buttonStyle="primary-alt" (click)="addCard()" class="add-button mb10-spacing"><i class="fas fa-plus mr5-spacing"></i>Add Card</button>
   <table hc-table [dataSource]="dataSource" tight="true" hcSort>
     <ng-container hcColumnDef="cardid">

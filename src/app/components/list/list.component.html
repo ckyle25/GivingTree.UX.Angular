@@ -1,5 +1,11 @@
-<div class="main-container">
+<div class="main-container" *ngIf="cards.length > 0">
   <div *ngFor="let card of cards; let i = index" [ngClass]="getClass(i)">
     <card [card]="card"></card>
+  </div>
+</div>
+
+<div class="main-container" *ngIf="cards.length == 0">
+  <div class="text-sub-title">
+    No Cards Available
   </div>
 </div>

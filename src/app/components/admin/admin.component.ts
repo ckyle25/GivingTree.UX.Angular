@@ -4,6 +4,7 @@ import { Store } from '@ngrx/store';
 import { Card } from 'src/app/models/card';
 import { IGlobalState } from 'src/app/models/global-state';
 import { AddCardModalComponent } from '../add-card-modal/add-card-modal.component';
+import { AdminPasswordModalComponent } from '../admin-password-modal/admin-password-modal.component';
 import { ConfirmDeleteModalComponent } from '../confirm-delete-modal/confirm-delete-modal.component';
 import { ReserveModalComponent } from '../reserve-modal/reserve-modal.component';
 
@@ -36,14 +37,17 @@ export class AdminComponent implements OnInit {
 
   displayedColumns: string[] = ['cardid', 'familyid', 'cardtitletxt', 'carddsc', 'reservedflg', 'reservednm', 'reservedemailtxt', 'delete'];
   dataSource: HcTableDataSource<Card>;
-  
+  result: any;
+  display: boolean = false;
+
   constructor(public store: Store<IGlobalState>,
               public modalService: ModalService) { }
 
   @ViewChild(HcSort)
   sort: HcSort;
   
-  ngOnInit() {
+  async ngOnInit() {
+    this.adminLogin();
     this.store.select(state => state.main).subscribe(main => this.dataSource = new HcTableDataSource(main.allCards));
     this.dataSource.sort = this.sort;
   }
@@ -68,5 +72,19 @@ export class AdminComponent implements OnInit {
     };
     let subModal: HcModal<ConfirmDeleteModalComponent> = this.modalService.open(ConfirmDeleteModalComponent, options);
     subModal.result.subscribe(res => {});
+  }
+
+  adminLogin() {
+    let options: ModalOptions = {
+      data: 'I got this data from the class that opened me',
+      ignoreEscapeKey: true,
+      ignoreOverlayClick: true,
+      size: 'lg'
+    };
+    let subModal: HcModal<AdminPasswordModalComponent> = this.modalService.open(AdminPasswordModalComponent, options);
+    subModal.result.subscribe(res => {
+      this.result = res
+      this.display = true;
+    });
   }
 }

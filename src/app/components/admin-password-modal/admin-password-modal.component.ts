@@ -24,11 +24,13 @@ export class AdminPasswordModalComponent implements OnInit {
       this.router.navigate(['landing/admin'])
     } else {
       alert('Password Incorrect')
+      this.router.navigate(['landing/list'])
     }
   }
 
   cancel() {
       this.activeModal.dismiss();
+      this.router.navigate(['landing/list'])
   }
 
 }
